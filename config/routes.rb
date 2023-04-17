@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :books, only: [:new, :create, :index, :show]
-  resourcrs :users, only: [:show, :edit, :index]
   get '/top' => 'homes#top'
   get 'homes/about' => 'homes#about', as: 'about'
-  devise_for :users
   root to:"homes#top"
+  devise_for :users
+  resources :books, only: [:new, :create, :index, :show, :edit]
+  resources :users, only: [:show, :create, :edit, :index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
