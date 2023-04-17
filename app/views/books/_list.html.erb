@@ -1,26 +1,27 @@
 <div class="container">
- <div class="row">
-  <div class="col-lg-3" style="background-color: orange";>
-  <h2>User info</h2>
+ <div class="row no-gutters">
+  <div class="col-lg-3";>
+  <h2 class="mb-2">User info</h2>
   <%= image_tag user.get_profile_image(100,100) %>
-   <table class = "userinfo">
+   <table>
     <tbody>
      <tr>
-      <td>name</td>
-      <td><%= user.name %></td>
+      <th class ="border-top p-2">name</th>
+      <th class ="border-top p-2"><%= user.name %></th>
      </tr>
      <tr>
-      <td>introduction</td>
-      <td><%= user.introduction %></td>
+      <th class ="border-top p-2">introduction</th>
+      <th class ="border-top p-2"><%= user.introduction %></th>
      </tr>
     </tbody>
    </table>
-  </div>
- </div>
+<br>
+<br>
+<div class="row">
+ <a class="btn btn-block btn-outline-secondary" href="/users/:id/edit" role="button"><i class="fas fa-user-cog"></i></a>
 </div>
 
-
-<h2>New book</h2>
+<h2 class="mt-3">New book</h2>
 <% if book.errors.any? %>
  <%= book.errors.count %>errors prohibited this obj from being saved:
   <ul>
@@ -30,11 +31,21 @@
   </ul>
  <% end %>
 
+<br>
 <%= form_with model: book do |f| %>
- <h6>Title</h4>
- <%= f.text_field :title %>
- <h6>Opinion</h4>
- <%= f.text_area :body %>
- <br>
- <%= f.submit 'Create Book' %>
+ <div class="mb-3">
+  <label for="inputTitle" class="form-label">Title</label>
+  <%= f.text_field :title, class: "form-control",rows:"3" %>
+ </div>
+ <div class="mb-3">
+  <h6>Opinion</h4>
+  <%= f.text_area :body, class: "form-control",rows:"3"%>
+ </div>
+  <br>
+  <div class="action">
+   <%= f.submit 'Create Book',class: "btn btn-success" %>
+  </div>
 <% end %>
+ </div>
+ </div>
+</div>

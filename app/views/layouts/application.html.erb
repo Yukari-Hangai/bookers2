@@ -3,11 +3,9 @@
   <head>
     <title>Bookers2</title>
     <script src="https://kit.fontawesome.com/84f708c9b2.js" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -29,12 +27,14 @@
     </header>
    
     <%= yield %>
-    <foote class="bg-white text-black pd-16">
-      <div class="container">
-        <div class="row md-15">
+    <footer class="bg-white text-black pd-3">
+     <div class="container mt-5">
+      <div class="row">
+        <div class="mx-auto">
           <p>CpoyRight Infratop.inc</p>
-        </dic>
+        </div>
       </div>
+     </div>  
     </footer>
   </body>
 </html>
