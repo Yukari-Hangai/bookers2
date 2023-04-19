@@ -12,6 +12,7 @@
   </head>
 
   <body class="d-flex flex-column vh-100">
+   
     <header>
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
@@ -71,7 +72,11 @@
     </header>
 
   <main class="mb-auto">
-    <%= yield %>
+   <div>
+    <%= flash[:notice] %>
+   </div>
+ 
+  <%= yield %>
   </main>
   <footer class="bg-white text-black pd-3">
    <div class="container mt-5">
