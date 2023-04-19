@@ -12,11 +12,11 @@
   </head>
 
   <body class="d-flex flex-column vh-100">
-   
+
     <header>
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand ml-3 py-1" href="/top">Bookers</a>
+        <a class="navbar-brand ml-3 py-1" href="/">Bookers</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,7 +45,7 @@
          </li>
          <% else %>
          <li class="nav-item px-2">
-           <%= link_to top_path, class: "nav-link text-light", method: :get do %>
+           <%= link_to root_path, class: "nav-link text-light", method: :get do %>
             <i class="fas fa-home"></i>Home
            <% end %>
          </li>
@@ -61,7 +61,7 @@
          </li>
          <li class="nav-item px-2">
            <%= link_to new_user_session_path, class: "nav-link text-light", method: :get do %>
-            <i class="fas fa-sign-in-alt"></i>Sign in
+            <i class="fas fa-sign-in-alt"></i>Log in
            <% end %>
          </li>
          <% end %>
@@ -75,7 +75,7 @@
    <div>
     <%= flash[:notice] %>
    </div>
- 
+
   <%= yield %>
   </main>
   <footer class="bg-white text-black pd-3">
