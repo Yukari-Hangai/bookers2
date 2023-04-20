@@ -1,8 +1,4 @@
 class UsersController < ApplicationController
-  def new
-    @book = Book.new
-  end
-  
   def show
     @book = Book.new
     @user = User.find(params[:id])
@@ -21,7 +17,7 @@ class UsersController < ApplicationController
      redirect_to user_path(current_user.id)
     end
   end
-  
+
   def update
     @user = User.find(params[:id])
     unless @user.id == current_user.id
@@ -36,13 +32,9 @@ class UsersController < ApplicationController
   end
 
   private
-  
-  def book_params
-    params.require(:book).permit(:title, :body,)
-  end
 
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction,)
   end
-  
+
 end
